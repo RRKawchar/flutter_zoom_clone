@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "690782404006",
+    "project_id": "live-streaming-twitch",
+    "storage_bucket": "live-streaming-twitch.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:690782404006:android:02343cb58ecc6630ef6367",
+        "android_client_info": {
+          "package_name": "com.example.flutter_zoom_clone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "690782404006-as47838pcujd3bg2pe8mg90dlrhcsom0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.flutter_zoom_clone",
+            "certificate_hash": "0fd9c3a46ead9dbce92148f48609347d9ea5f7a5"
+          }
+        },
+        {
+          "client_id": "690782404006-d0btapftk5bski64sb9tk2jenj1ftbht.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDstJ6uf-jNeMjMNSQyXYyZ2tcxVYczwz0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "690782404006-d0btapftk5bski64sb9tk2jenj1ftbht.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
