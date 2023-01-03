@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_zoom_clone/resources/auth_methods.dart';
 import 'package:flutter_zoom_clone/widgets/custom_button.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
@@ -11,6 +12,8 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+
+  final AuthMethods _authmethod=AuthMethods();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,21 +31,17 @@ class _LoginScreenState extends State<LoginScreen> {
             padding: const EdgeInsets.symmetric(vertical: 38.0),
             child: Image.asset("assets/images/onboarding.jpg"),
           ),
-          CustomButton(text: "Google Sign In",onPressed: signInWithGoogle,)
+          CustomButton(text: "Google Sign In",onPressed: ()async{
+
+            bool res=await _authmethod.signInWithGoogle(context);
+            if(res){
+             Navigator.pushNamed(context, '/home');
+            }
+          },)
         ],
       ),
     );
   }
 
-  Future<UserCredential> signInWithGoogle() async {
-    final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
-    final GoogleSignInAuthentication? googleAuth = await googleUser?.authentication;
-    final credential = GoogleAuthProvider.credential(
-      accessToken: googleAuth?.accessToken,
-      idToken: googleAuth?.idToken,
-    );
 
-
-    return await FirebaseAuth.instance.signInWithCredential(credential);
-  }
 }
